@@ -36,7 +36,7 @@ class Menu extends \yii\widgets\Menu
         if ($this->params === null) {
             $this->params = Yii::$app->request->getQueryParams();
         }
-        $posDefaultAction = strpos($this->route, Yii::$app->controller->defaultAction);
+        $posDefaultAction = strpos($this->route, Yii::$app->controller->action->id);
         if ($posDefaultAction) {
             $this->noDefaultAction = rtrim(substr($this->route, 0, $posDefaultAction), '/');
         } else {
